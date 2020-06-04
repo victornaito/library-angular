@@ -19,12 +19,21 @@ steps:
   displayName: 'Run a multi-line script'
   
 - task: Npm@1
+  displayName: 'NPM Install'
   inputs:
     command: 'install'
     workingDir: './test'
 
 - task: Npm@1
+  displayName: 'Install Angular CLI'
   inputs:
     command: 'custom'
-    customCommand: 'i @angular/cli -g | ng build'
+    customCommand: 'i @angular/cli -g'
+    workingDir: './test'
+
+- task: Npm@1
+  displayName: 'Build'
+  inputs:
+    command: 'custom'
+    customCommand: 'ng build'
     workingDir: './test'
