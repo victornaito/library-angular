@@ -26,5 +26,5 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'npm i @angular/cli -g && ng build'
+    customCommand: 'i @angular/cli -g && ng build'
     workingDir: './test'
