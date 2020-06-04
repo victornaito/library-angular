@@ -18,7 +18,15 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: |
-    cd ./test ng lint && ng build
-  displayName: 'Build'
+- task: Npm@1
+  inputs:
+    command: 'ci'
   
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'ng build'
