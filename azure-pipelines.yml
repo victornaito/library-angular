@@ -19,6 +19,6 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-    ng lint && ng build --prod 
+    cd /test ng lint && ng build
   displayName: 'Build'
   
