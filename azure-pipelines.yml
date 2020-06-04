@@ -19,7 +19,7 @@ steps:
   displayName: 'Run a multi-line script'
   
 - task: Npm@1
-  displayName: 'NPM Install'
+  displayName: 'Npm Install'
   inputs:
     command: 'install'
     workingDir: './test'
@@ -28,7 +28,7 @@ steps:
   displayName: 'Install Angular CLI'
   inputs:
     command: 'custom'
-    customCommand: 'i @angular/cli -g'
+    customCommand: 'sudo i @angular/cli -g'
     workingDir: './test'
 
 - task: Npm@1
