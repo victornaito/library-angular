@@ -24,13 +24,17 @@ steps:
     command: 'install'
     workingDir: './test'
 
-- task: Npm@1
+- task: Bash@3
   displayName: 'Install Angular CLI'
   inputs:
-    command: 'custom'
-    customCommand: 'sudo i @angular/cli -g'
-    workingDir: './test'
-
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
+      sudo su
+      npm i  @angular/cli -g
+      workingDir: './test'
 - task: Npm@1
   displayName: 'Build'
   inputs:
